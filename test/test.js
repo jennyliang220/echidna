@@ -371,11 +371,11 @@ describe('DocumentDownloader', () => {
   after(trackProgress);
 });
 
-describe('SpecberusWrapper', () => {
+describe.only('SpecberusWrapper', () => {
   describe('get Specberus version()', () => {
-    // const version = SpecberusWrapper.version();
+    const version = SpecberusWrapper.version();
     it('should be a format of semantic versioning', () => {
-      //   expect(version).to.eventually.match(/\d+.\d+.\d+/);
+      expect(version).to.eventually.match(/\d+.\d+.\d+/);
     });
   });
 
@@ -390,8 +390,9 @@ describe('SpecberusWrapper', () => {
       profile: myDraft.status,
       patentPolicy: myDraft.patentPolicy,
     });
+    console.log('\n\n\n======== \n\n\nbefore content');
     const content = SpecberusWrapper.validate(myDraft.location, metadata);
-
+    console.log('\n\n\n======== agter contetn\n\n\n', content);
     it('should return a promise', () => {
       expect(content).to.be.an.instanceOf(Promise);
     });
