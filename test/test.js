@@ -371,9 +371,16 @@ describe('DocumentDownloader', () => {
   after(trackProgress);
 });
 
-describe('SpecberusWrapper', () => {
-  describe('validate(url)', () => {
-    it('should be a function', () => {
+describe.only('SpecberusWrapper', async () => {
+  describe('get Specberus version()', async () => {
+    const version = await SpecberusWrapper.version();
+    it('should be a format of semantic versioning', () => {
+      expect(version).to.eventually.match(/\d+.\d+.\d+/);
+    });
+  });
+
+  describe('validate(url)', async () => {
+    it('should be a function', async () => {
       expect(SpecberusWrapper.validate).to.be.a('function');
     });
 
@@ -383,8 +390,7 @@ describe('SpecberusWrapper', () => {
       profile: myDraft.status,
       patentPolicy: myDraft.patentPolicy,
     });
-    const content = SpecberusWrapper.validate(myDraft.location, metadata);
-
+    const content = await SpecberusWrapper.validate(myDraft.location, metadata);
     it('should return a promise', () => {
       expect(content).to.be.an.instanceOf(Promise);
     });
