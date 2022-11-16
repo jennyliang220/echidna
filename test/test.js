@@ -380,7 +380,7 @@ describe.only('SpecberusWrapper', async () => {
   });
 
   describe('validate(url)', async () => {
-    it('should be a function', () => {
+    it('should be a function', async () => {
       expect(SpecberusWrapper.validate).to.be.a('function');
     });
 
