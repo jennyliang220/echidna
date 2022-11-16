@@ -372,12 +372,12 @@ describe('DocumentDownloader', () => {
 });
 
 describe('SpecberusWrapper', () => {
-  // describe('get Specberus version()', async () => {
-  //   const version = await SpecberusWrapper.version();
-  //   it('should be a format of semantic versioning', () => {
-  //     expect(version).to.eventually.match(/\d+.\d+.\d+/);
-  //   });
-  // });
+  describe('get Specberus version()', () => {
+    const version = SpecberusWrapper.version();
+    // it('should be a format of semantic versioning', () => {
+    //   expect(version).to.eventually.match(/\d+.\d+.\d+/);
+    // });
+  });
 
   describe('validate(url)', () => {
     it('should be a function', () => {
