@@ -373,9 +373,9 @@ describe('DocumentDownloader', () => {
 
 describe('SpecberusWrapper', () => {
   describe('get Specberus version()', () => {
-    const version = SpecberusWrapper.version();
-    // it('should be a format of semantic versioning', () => {
-    //   expect(version).to.eventually.match(/\d+.\d+.\d+/);
+    // const version = SpecberusWrapper.version();
+    it('should be a format of semantic versioning', () => {
+      //   expect(version).to.eventually.match(/\d+.\d+.\d+/);
     });
   });
 
