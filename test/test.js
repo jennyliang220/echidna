@@ -390,9 +390,7 @@ describe.only('SpecberusWrapper', () => {
       profile: myDraft.status,
       patentPolicy: myDraft.patentPolicy,
     });
-    console.log('\n\n\n======== \n\n\nbefore content');
     const content = SpecberusWrapper.validate(myDraft.location, metadata);
-    console.log('\n\n\n======== agter contetn\n\n\n', content);
     it('should return a promise', () => {
       expect(content).to.be.an.instanceOf(Promise);
     });
